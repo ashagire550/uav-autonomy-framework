@@ -1,0 +1,10 @@
+uav_navigation_node:
+  ros__parameters:
+    max_speed: 5.0
+    takeoff_height: 10.0
+    waypoint_tolerance: 0.5
+
+uav_detection_node:
+  ros__parameters:
+    confidence_threshold: 0.5
+    model_path: "yolov8n.pt"

@@ -1,0 +1,8 @@
+numpy
+opencv-python
+pyyaml
+mavsdk
+ultralytics
+rclpy
+geometry_msgs
+sensor_msgs
