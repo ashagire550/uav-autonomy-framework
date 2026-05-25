@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ros2:
+    image: osrf/ros:humble-desktop-full
+    container_name: uav_ros2_env
+    privileged: true
+    network_mode: host
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: bash
