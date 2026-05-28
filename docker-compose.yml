@@ -6,7 +6,16 @@ services:
     container_name: uav_ros2_env
     privileged: true
     network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - GZ_VERSION=harmonic
     volumes:
       - .:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
     working_dir: /workspace
-    command: bash
+    command: >
+      bash -c "source /opt/ros/humble/setup.bash &&
+               colcon build --symlink-install &&
+               source install/setup.bash &&
+               ros2 launch uav_navigation simulation_launch.py"
